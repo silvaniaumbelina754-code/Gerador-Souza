@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Sensibilidade Free Fire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">🎯</div>
+                    <div class="logo-text">
+                        <h1>Gerador de Sensibilidade Free Fire</h1>
+                        <p>Sensi perfeita para seu dispositivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Encontre sua <span class="highlight">Sensibilidade</span> Ideal</h2>
+                <p>Escolha seu dispositivo e o nível de sensibilidade desejado. Geramos a configuração perfeita para você!</p>
+            </section>
+
+            <!-- Device Selection -->
+            <section class="section">
+                <div class="section-header">
+                    <h3>1️⃣ Escolha seu Dispositivo</h3>
+                </div>
+                <div class="device-grid">
+                    <button class="device-btn" data-device="android">
+                        <span class="device-icon">📱</span>
+                        <span class="device-name">Android</span>
+                        <span class="device-desc">Samsung, Xiaomi, etc</span>
+                    </button>
+                    <button class="device-btn" data-device="ios">
+                        <span class="device-icon">📱</span>
+                        <span class="device-name">iOS</span>
+                        <span class="device-desc">iPhone, iPad</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Level Selection -->
+            <section class="section" id="level-section" style="display: none;">
+                <div class="section-header">
+                    <h3>2️⃣ Escolha o Nível de Sensibilidade</h3>
+                </div>
+                <div class="level-grid">
+                    <button class="level-btn" data-level="baixa">
+                        <span class="level-icon">🎯</span>
+                        <span class="level-name">Baixa</span>
+                        <span class="level-desc">Controle máximo</span>
+                    </button>
+                    <button class="level-btn" data-level="media">
+                        <span class="level-icon">⚡</span>
+                        <span class="level-name">Média</span>
+                        <span class="level-desc">Balanceado</span>
+                    </button>
+                    <button class="level-btn" data-level="alta">
+                        <span class="level-icon">⚡</span>
+                        <span class="level-name">Alta</span>
+                        <span class="level-desc">Máxima agilidade</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Configuration Display -->
+            <section class="section" id="config-section" style="display: none;">
+                <div class="config-header">
+                    <h3>3️⃣ Sua Configuração</h3>
+                    <button class="copy-btn" id="copy-btn">
+                        <span>📋</span> Copiar Configurações
+                    </button>
+                </div>
+
+                <div class="config-grid">
+                    <!-- Geral -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-title">
+                                <h4>Geral</h4>
+                                <p>Câmera sem mira aberta</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="geral-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="geral-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ponto Vermelho -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">🔴</div>
+                            <div class="card-title">
+                                <h4>Ponto Vermelho</h4>
+                                <p>Mira simples (Red Dot)</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="ponto-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="ponto-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mira 2x -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">🔍</div>
+                            <div class="card-title">
+                                <h4>Mira 2x</h4>
+                                <p>Mira com ampliação 2x</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="mira2x-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="mira2x-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mira 4x -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">🎯</div>
+                            <div class="card-title">
+                                <h4>Mira 4x</h4>
+                                <p>Mira com ampliação 4x</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="mira4x-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="mira4x-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mira AWM -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">💥</div>
+                            <div class="card-title">
+                                <h4>Mira AWM</h4>
+                                <p>Snipers (AWM, M82B, Kar98k)</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="awm-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="awm-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Olhadinha -->
+                    <div class="config-card">
+                        <div class="card-header">
+                            <div class="card-icon">👀</div>
+                            <div class="card-title">
+                                <h4>Olhadinha</h4>
+                                <p>Botão de olhar</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="value-display">
+                                <span class="label">Valor:</span>
+                                <span class="value" id="olhadinha-value">0</span>
+                            </div>
+                            <input type="range" class="slider" id="olhadinha-slider" min="1" max="200" value="0">
+                            <div class="range-labels">
+                                <span>1 (Lento)</span>
+                                <span>200 (Rápido)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discord Section -->
+            <section class="section discord-section">
+                <div class="discord-card">
+                    <div class="discord-header">
+                        <span class="discord-icon">💬</span>
+                        <h3>Junte-se à Nossa Comunidade</h3>
+                    </div>
+                    <p class="discord-desc">Compartilhe suas sensibilidades e dicas com outros jogadores</p>
+                    <p class="discord-text">Tem dúvidas sobre qual sensibilidade escolher? Quer compartilhar sua sensi com a comunidade? Junte-se ao nosso servidor Discord!</p>
+                    <a href="https://discord.gg/seu-servidor-aqui" target="_blank" class="discord-btn">
+                        <span>💬</span> Entrar no Discord
+                    </a>
+                    <p class="discord-note">Clique no botão acima para acessar nosso servidor Discord</p>
+                </div>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="section tips-section">
+                <div class="tips-card">
+                    <h3>⚡ Dicas Importantes</h3>
+                    <ul class="tips-list">
+                        <li>
+                            <strong>Teste em partidas casuais:</strong> Sempre teste a sensibilidade em modo clássico antes de usar em ranqueadas.
+                        </li>
+                        <li>
+                            <strong>Ajuste gradualmente:</strong> Se a sensi não se adequar, mude um parâmetro por vez.
+                        </li>
+                        <li>
+                            <strong>Considere seu DPI:</strong> O DPI do seu dispositivo também influencia. Ajuste conforme necessário.
+                        </li>
+                        <li>
+                            <strong>Pratique:</strong> A melhor sensi é aquela em que você se sente confortável jogando.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Gerador de Sensibilidade Free Fire - Encontre sua sensi perfeita! 🎮</p>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
